@@ -24,7 +24,7 @@ export default class Figure extends Vue {
 
   $eventBus!: Vue;
 
-  drawPoint(x: string | number, y: string | number, pointColor = "black") {
+  drawPoint(x: number, y: number, pointColor = "black") {
     if (isNaN(x) || isNaN(y) || !this.canvas) return;
     const numberX = Number(x);
     const numberY = Number(y);

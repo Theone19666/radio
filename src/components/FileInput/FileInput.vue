@@ -10,7 +10,6 @@
 import { Component, Vue } from "vue-property-decorator";
 @Component
 export default class FileInput extends Vue {
-  value: any = null;
   $eventBus!: Vue;
   onFileChange(file: Blob) {
     const reader = new FileReader();
