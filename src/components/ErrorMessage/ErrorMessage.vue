@@ -10,6 +10,8 @@ import { Component, Vue } from "vue-property-decorator";
 export default class ErrorMessage extends Vue {
   message = "";
 
+  $eventBus!: Vue;
+
   showMessage(message: string) {
     this.message = message;
     setTimeout(() => (this.message = ""), 3000);
