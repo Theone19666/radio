@@ -195,7 +195,7 @@ export default class Figure extends Vue {
   }
 
   mounted() {
-    const canvas = this.$refs.figure;
+    const canvas = this.$refs.figure as HTMLCanvasElement;
     this.canvas = canvas?.getContext("2d");
     this.drawAxes();
   }
