@@ -203,8 +203,15 @@ export default class Figure extends Vue {
     this.canvas.lineWidth = 2.0;
     this.canvas.beginPath();
     this.canvas.moveTo(30, 10);
+    this.canvas.lineTo(25, 20);
+    this.canvas.moveTo(30, 10);
+    this.canvas.lineTo(35, 20);
+    this.canvas.moveTo(30, 10);
     this.canvas.lineTo(30, 460);
     this.canvas.lineTo(490, 460);
+    this.canvas.lineTo(480, 455);
+    this.canvas.lineTo(490, 460);
+    this.canvas.lineTo(480, 465);
     this.canvas.stroke();
     // рисуем текст и вертикальные линии
     this.canvas.fillStyle = "black";
