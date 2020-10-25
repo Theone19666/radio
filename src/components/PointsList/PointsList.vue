@@ -2,9 +2,12 @@
   <v-list>
     <v-list-item v-for="(point, index) of points" :key="index">
       <v-list-item-content>
-        <v-list-item-title
+        <v-list-item-title v-if="typeof point === 'object' && point !== null"
           >Точка {{ index + 1 }}: x: {{ point.x }}, y:
           {{ point.y }}</v-list-item-title
+        >
+        <v-list-item-title v-else>
+          Точка {{ index + 1 }}: {{ point }}</v-list-item-title
         >
       </v-list-item-content>
     </v-list-item>
