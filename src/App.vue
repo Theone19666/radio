@@ -36,11 +36,9 @@ export default class App extends Vue {}
 .main-layout {
   @media all and (max-width: 993px) {
     flex-direction: column;
-    align-items: center;
   }
 }
 .column {
-  width: 50%;
   @media all and (max-width: 993px) {
     width: 100%;
     max-width: 500px;
