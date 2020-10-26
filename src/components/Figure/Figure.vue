@@ -11,7 +11,7 @@
 <script lang="ts">
 /* ПРИМЕЧЕНИЕ: все закомментированные строки нужны: они различаются только одной цифрой - либо 4, либо 20.
 Выбор цифры зависит от масштаба данных (закомментированые строки подходят для данных с максимумом 20) */
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue, Watch } from "vue-property-decorator";
 import { Point } from "../../interfaces";
 @Component
 export default class Figure extends Vue {
@@ -25,6 +25,14 @@ export default class Figure extends Vue {
   data = "";
 
   $eventBus!: Vue;
+
+  @Watch("data")
+  onDataChange(value: string) {
+    if (!value && this.canvas) {
+      this.canvas.clearRect(0, 0, 500, 500);
+      this.drawAxes();
+    }
+  }
 
   // рисование точки на canvas
   drawPoint(x: number, y: number, pointColor = "black") {
@@ -55,6 +63,7 @@ export default class Figure extends Vue {
   }
 
   // вычисление точки, в которой был замечен радиопередатчик
+  // вычисляется точка пересечения трёх окружностей с переданными координатами и радиусами
   getIntersectionPoint(
     firstPoint: Point,
     secondPoint: Point,

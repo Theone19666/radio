@@ -12,6 +12,10 @@ import { Component, Vue } from "vue-property-decorator";
 export default class FileInput extends Vue {
   $eventBus!: Vue;
   onFileChange(file: Blob) {
+    if (!file) {
+      this.$eventBus.$emit("data-received", "");
+      return;
+    }
     const reader = new FileReader();
 
     reader.readAsText(file);
