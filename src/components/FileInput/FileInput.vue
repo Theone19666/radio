@@ -34,10 +34,3 @@ export default class FileInput extends Vue {
   }
 }
 </script>
-<style lang="scss" scoped>
-.file-input {
-  @media all and (max-width: 993px) {
-    max-width: 500px;
-  }
-}
-</style>
