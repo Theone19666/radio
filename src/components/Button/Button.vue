@@ -1,5 +1,5 @@
 <template>
-  <v-btn @click="onClick">Нарисовать точки</v-btn>
+  <v-btn @click="onClick" class="primary v-btn--block">Нарисовать точки</v-btn>
 </template>
 
 <script lang="ts">
